@@ -79,7 +79,9 @@ sources = [
 ]
 
 slgh_sources = [
+  'src/decompiler/sleigh_arch.cc',
   'src/decompiler/sleigh.cc',
+  'src/decompiler/inject_sleigh.cc',
   'src/decompiler/pcodecompile.cc',
   'src/decompiler/sleighbase.cc',
   'src/decompiler/slghsymbol.cc',
@@ -112,7 +114,8 @@ ghidra_static = static_library('ghidra',
 )
 
 slgh_static = static_library('slgh',
-  sources + slgh_sources,
+  slgh_sources,
+  link_with: ghidra_static,
   dependencies: zlib,
   include_directories: incs
 )

@@ -120,7 +120,7 @@ sleighc_sources = [
 r2ghidra_core_plugin = library('core_r2ghidra',
   r2ghidra_core_sources,
   dependencies: r_core,
-  link_with: ghidra_static,
+  link_with: [ghidra_static, slgh_static],
   override_options : ['c_std=c11', 'cpp_std=c++11'],
   include_directories: [ghidra_incs, r2ghidra_incdirs],
   install: true,
