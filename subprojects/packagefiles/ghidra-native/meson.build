@@ -10,6 +10,7 @@ base_sources = [
   'src/decompiler/opcodes.cc',
   'src/decompiler/globalcontext.cc',
   'src/decompiler/xml.cc',
+  'src/decompiler/loadimage.cc',
 ]
 
 decompiler_sources = [
@@ -28,7 +29,6 @@ decompiler_sources = [
   'src/decompiler/modelrules.cc',
   'src/decompiler/fspec.cc',
   'src/decompiler/action.cc',
-  'src/decompiler/loadimage.cc',
   'src/decompiler/varnode.cc',
   'src/decompiler/op.cc',
   'src/decompiler/type.cc',
