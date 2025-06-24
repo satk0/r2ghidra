@@ -68,12 +68,6 @@ decompiler_sources = [
   'src/decompiler/opbehavior.cc',
   'src/decompiler/paramid.cc',
   'src/decompiler/string_ghidra.cc',
-
-  'src/decompiler/grammar.cc',
-  'src/decompiler/callgraph.cc',
-  'src/decompiler/ifacedecomp.cc',
-  'src/decompiler/ifaceterm.cc',
-  'src/decompiler/interface.cc',
 ]
 
 libdecomp_sources = [
@@ -108,10 +102,11 @@ slgh_sources = [
   'src/decompiler/compression.cc',
   'src/decompiler/filemanage.cc',
 
+  'src/decompiler/pcodeparse.cc',
+  'src/decompiler/grammar.cc',
 ]
 
 sleigh_compiler_sources = [
-  'src/decompiler/pcodeparse.cc',
   'src/decompiler/slgh_compile.cc',
   'src/decompiler/slgh_compile.hh',
   'src/decompiler/slghparse.hh',
