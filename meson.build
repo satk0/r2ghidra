@@ -42,8 +42,9 @@ else
   r2_plugdir = prefix + '/lib/radare2/plugins'
 endif
 
-cpp = meson.get_compiler('cpp')
-if cpp.get_id() == 'msvc'
+# cpp = meson.get_compiler('cpp')
+# if cpp.get_id() == 'msvc'
+if host_machine.system() == 'windows'
   incdirs += [
     'radare2/include/libr',
     'radare2/include/libr/sdb',
