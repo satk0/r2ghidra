@@ -1,0 +1,12 @@
+diff --git a/src/decompiler/filemanage.cc b/src/decompiler/filemanage.cc
+index aa1d06c..f8698e0 100644
+--- a/src/decompiler/filemanage.cc
++++ b/src/decompiler/filemanage.cc
+@@ -18,6 +18,7 @@
+ 
+ #ifdef _WINDOWS
+ #include <windows.h>
++#undef LoadImage
+ 
+ #else
+ // POSIX functions for searching directories
