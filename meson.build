@@ -48,6 +48,8 @@ if cpp.get_id() == 'msvc'
     'radare2/include/libr',
     'radare2/include/libr/sdb',
   ]
+  add_global_arguments('-DNOMINMAX', language:'cpp')
+  add_global_arguments('-DWIN32_LEAN_AND_MEAN', language:'cpp')
   add_global_arguments('-D_WINDOWS', language:'cpp')
   add_global_arguments('-D_WIN32', language:'cpp')
   add_global_arguments('-DZLIB_WINAPI', language:'cpp')
