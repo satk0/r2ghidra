@@ -119,7 +119,7 @@ sleighc_sources = [
   # ghidra_decompiler_sources,
 ]
 
-r2ghidra_core_plugin = shared_library('core_r2ghidra',
+r2ghidra_core_plugin = library('core_r2ghidra',
   r2ghidra_core_sources,
   dependencies: [r_core, zlib],
   link_with: libdecomp_static,
