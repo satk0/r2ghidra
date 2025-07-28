@@ -123,26 +123,26 @@ endif
 
 incs = include_directories('src/decompiler')
 
-ghidra_base_static = static_library('base',
+ghidra_base_static = library('base',
   base_sources,
   include_directories: incs
 )
 
-ghidra_decompiler_static = static_library('ghidra',
+ghidra_decompiler_static = library('ghidra',
   decompiler_sources,
   dependencies: zlib,
   link_with: ghidra_base_static,
   include_directories: incs
 )
 
-slgh_static = static_library('slgh',
+slgh_static = library('slgh',
   slgh_sources, # + sleigh_compiler_sources,
   dependencies: zlib,
   link_with: ghidra_base_static,
   include_directories: incs
 )
 
-libdecomp_static = static_library('libdecomp',
+libdecomp_static = library('libdecomp',
   libdecomp_sources,
   dependencies: zlib,
   link_with: [ghidra_decompiler_static, slgh_static],
