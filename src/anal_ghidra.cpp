@@ -1951,8 +1951,14 @@ static std::string regtype_name(const char *cpu, const std::string &regname) {
 #if R2_VERSION_NUMBER >= 50809
 extern "C" char *r2ghidra_regs(RArchSession *as) {
 	R_RETURN_VAL_IF_FAIL (as, nullptr);
+	// RCore *core = reinterpret_cast<RCore *>(as->user);
 
+	R_LOG_INFO ("REGS");
+	// if (!core) {
+	// 	R_LOG_INFO ("NULL");
+	// }
 	const char *cpu = r_config_get (Gcore->config, "asm.cpu"); // (as->config != nullptr)? as->config->cpu: "arm";
+	R_LOG_INFO ("OUT_REGS");
 
 	if (R_STR_ISEMPTY (cpu)) {
 		return nullptr;

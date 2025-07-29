@@ -23,9 +23,9 @@
 
 #undef DEBUG_EXCEPTIONS
 
-#if R2_VERSION_NUMBER < 50909
+// #if R2_VERSION_NUMBER < 50909
 extern "C" RCore *Gcore;
-#endif
+// #endif
 
 typedef bool (*ConfigVarCb)(void *user, void *data);
 
@@ -566,7 +566,9 @@ static void EnablePlugin(RCore *core) {
 	auto id = SleighIdFromCore (core);
 	r_config_set (core->config, "r2ghidra.lang", id.c_str ());
 	r_config_set (core->config, "asm.cpu", id.c_str ());
+	R_LOG_INFO ("AAA")
 	r_config_set (core->config, "asm.arch", "r2ghidra");
+	R_LOG_INFO ("BBB")
 	r_config_set (core->config, "anal.arch", "r2ghidra");
 }
 
@@ -715,6 +717,7 @@ extern "C" bool r2ghidra_core_init(RCorePluginSession *cps) {
 	std::lock_guard<std::recursive_mutex> lock(decompiler_mutex);
 	startDecompilerLibrary (nullptr);
 	RCore *core = reinterpret_cast<RCore *>(cps->core);
+	Gcore = core;
 	r_arch_plugin_add (core->anal->arch, &r_arch_plugin_ghidra);
 	RConfig *cfg = core->config;
 	r_config_lock (cfg, false);

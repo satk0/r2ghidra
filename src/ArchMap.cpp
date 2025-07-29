@@ -214,6 +214,7 @@ std::string SleighIdFromCore(RCore *core) {
 		return "gcc";
 	}
 	const char *arch = r_config_get (core->config, "asm.arch");
+	R_LOG_INFO ("ARCH: %s", arch);
 	if (!strcmp (arch, "r2ghidra")) {
 #if R2_VERSION_NUMBER >= 50609
 		RArchConfig *ac = core->rasm->config;
